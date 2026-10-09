@@ -1,0 +1,184 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+}
+
+html, body {
+  overscroll-behavior: none;
+  background: #0D2E27;
+  color: #fff;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+/* Mobile frame constraint */
+.mobile-frame {
+  max-width: 430px;
+  margin: 0 auto;
+  min-height: 100vh;
+  min-height: 100dvh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar — hidden but functional */
+.scroll-area {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.scroll-area::-webkit-scrollbar {
+  display: none;
+}
+
+/* Form inputs */
+.field-input {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(204, 255, 0, 0.12);
+  border-radius: 12px;
+  padding: 14px 16px;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 400;
+  transition: all 0.2s ease;
+  outline: none;
+}
+.field-input::placeholder {
+  color: rgba(255, 255, 255, 0.35);
+}
+.field-input:focus {
+  border-color: #CCFF00;
+  background: rgba(255, 255, 255, 0.09);
+  box-shadow: 0 0 0 3px rgba(204, 255, 0, 0.08);
+}
+
+.field-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(204, 255, 0, 0.7);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 6px;
+  display: block;
+}
+
+/* Buttons */
+.btn-primary {
+  background: #CCFF00;
+  color: #0D2E27;
+  font-weight: 700;
+  border-radius: 14px;
+  padding: 16px;
+  transition: all 0.2s ease;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.btn-primary:active {
+  transform: scale(0.97);
+}
+
+.btn-ghost {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  font-weight: 600;
+  border-radius: 12px;
+  padding: 12px 16px;
+  transition: all 0.2s ease;
+}
+.btn-ghost:active {
+  transform: scale(0.97);
+}
+
+/* Glass card */
+.glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+}
+
+/* Segmented control */
+.seg-btn {
+  flex: 1;
+  padding: 10px 0;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 10px;
+  transition: all 0.25s ease;
+  text-align: center;
+}
+.seg-btn-active {
+  background: #CCFF00;
+  color: #0D2E27;
+}
+.seg-btn-inactive {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Role badges */
+.badge-chairman {
+  background: rgba(204, 255, 0, 0.2);
+  color: #CCFF00;
+  border: 1px solid rgba(204, 255, 0, 0.4);
+}
+.badge-admin {
+  background: rgba(93, 213, 193, 0.15);
+  color: #5DD5C1;
+  border: 1px solid rgba(93, 213, 193, 0.3);
+}
+.badge-accountant {
+  background: rgba(245, 158, 11, 0.15);
+  color: #F59E0B;
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+.badge-member {
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* ID badge overlay on circular icons */
+.id-badge {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  background: #CCFF00;
+  color: #0D2E27;
+  font-size: 10px;
+  font-weight: 800;
+  font-family: 'Inter', monospace;
+  letter-spacing: 0.02em;
+  padding: 2px 5px;
+  border-radius: 6px;
+  line-height: 1;
+  white-space: nowrap;
+  z-index: 5;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+  border: 1.5px solid #0D2E27;
+}
+
+.id-badge-sm {
+  font-size: 10px;
+  padding: 1px 3px;
+  border-radius: 4px;
+}
